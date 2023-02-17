@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"golang.org/x/net/html"
 	"net/http"
 	"strconv"
@@ -60,7 +59,6 @@ func index(w http.ResponseWriter, r *http.Request) {
 		data := PostData{ModAsBool: modBool}
 		temp.Execute(w, data)
 	} else if r.Method == "POST" {
-		fmt.Println(r.FormValue("DolarValue") == "")
 		inp := r.FormValue("DolarValue")
 		mod := r.FormValue("currency")
 		if mod != "" {
